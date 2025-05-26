@@ -208,7 +208,7 @@ const Home = () => {
       {/* Restaurants Section */}
       <section className="restaurants-section">
         <div className="section-header">
-          <h2 className="section-title">Top restaurant chains in Chhindwara</h2>
+          <h2 className="section-title">Top Food chains in Chai Bunk</h2>
           <div className="section-nav">
             <button className="nav-arrow">←</button>
             <button className="nav-arrow">→</button>
