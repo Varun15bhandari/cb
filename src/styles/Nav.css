@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Navigation Container */
+.navbar {
+  /* background: linear-gradient(135deg, #f4a734 0%, #e8941f 100%); */
+  background: #FFD700;
+  box-shadow: 0 4px 20px rgba(244, 167, 52, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* Logo Section */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2c1810;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  background: #2c1810;
+  border-radius: 12px;
+  padding: 12px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(44, 24, 16, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 24, 16, 0.4);
+}
+
+.chai-icon {
+  font-size: 24px;
+  color: #f4a734;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #2c1810;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.brand-tagline {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4a3426;
+  letter-spacing: 0.5px;
+  margin-top: -2px;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.nav-link {
+  color: #2c1810;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(44, 24, 16, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(44, 24, 16, 0.3);
+}
+
+.nav-link:hover::before {
+  left: 0;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+}
+
+/* Mobile Hamburger Menu */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(44, 24, 16, 0.1);
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: #2c1810;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .brand-name {
+    font-size: 22px;
+  }
+  
+  .nav-link {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    height: 70px;
+    padding: 0 15px;
+  }
+  
+  .nav-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f4a734 0%, #e8941f 100%);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    gap: 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    padding: 15px 0;
+    margin: 5px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-link:hover {
+    background: rgba(44, 24, 16, 0.9);
+  }
+  
+  .logo-icon {
+    padding: 10px;
+    margin-right: 12px;
+  }
+  
+  .chai-icon {
+    font-size: 20px;
+  }
+  
+  .brand-name {
+    font-size: 20px;
+  }
+  
+  .brand-tagline {
+    font-size: 11px;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .nav-container {
+    height: 65px;
+    padding: 0 10px;
+  }
+  
+  .nav-menu {
+    top: 65px;
+  }
+  
+  .logo-icon {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .chai-icon {
+    font-size: 18px;
+  }
+  
+  .brand-name {
+    font-size: 18px;
+  }
+  
+  .brand-tagline {
+    font-size: 10px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    margin: 3px 15px;
+  }
+}
+
+/* Smooth Scrolling for Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+}
+
+/* Add top padding to body to account for fixed navbar */
+body {
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 65px;
+  }
+}
+
+/* Additional Animation for Page Load */
+.navbar {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hover effect for mobile menu items */
+@media screen and (max-width: 768px) {
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 80%;
+  }
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus,
+.nav-logo-link:focus,
+.nav-toggle:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
