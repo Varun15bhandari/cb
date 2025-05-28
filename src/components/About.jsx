@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/About.css';
+import './About.css';
 import groupPic from '../Images/bunkImg/group pic.jpg';
 
 const About = () => {

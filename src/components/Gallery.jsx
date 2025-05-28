@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Gallery.css';
+import './Gallery.css';
 // import groupPic from '../Images/bunk images/group pic.jpg';
 // import watermelon from '../Images/bunkImg/water melon Mocktails.jpg';
 // import Mocktail from '../Images/bunkImg/Green Mocktails.jpg';
